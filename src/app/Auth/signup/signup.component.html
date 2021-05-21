@@ -1,0 +1,64 @@
+
+
+
+<mat-card>
+
+    <form (submit)="onSignUp(signupForm)" class ="login" name = "login" #signupForm="ngForm">
+        <p><b><u>Please Sign Up:</u></b></p>
+    
+        <mat-form-field>
+            <input matInput type="text" ngModel name="enteredUserName" 
+            placeholder="User Name"
+            required
+            minlength="8"
+            #enteredUserName = "ngModel"/>
+            <mat-error *ngIf="enteredUserName.invalid">{{enteredUserNameError}}</mat-error>
+        </mat-form-field>
+    
+        <br>
+        <br>
+    
+    
+        <mat-form-field>
+            <input matInput type="email" 
+            ng-pattern = "^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+            ngModel name="enteredEmail" 
+            name="emailAddress" 
+            placeholder="Email Address"
+            required
+            #enteredEmail = "ngModel"/>
+            <mat-error *ngIf="enteredEmail.invalid">{{enteredEmailError}}</mat-error>
+        </mat-form-field>
+        
+    
+    
+            <br>
+            <br>
+    
+            <mat-form-field>
+                <input matInput type="password" 
+                ng-pattern = "^([a-zA-Z0-9A*#]{8,15})$"
+                ngModel name="enteredPassword" 
+                placeholder="Password"
+                required
+                #enteredPassword = "ngModel"/>
+                <mat-error *ngIf="enteredPassword.invalid">{{enteredEmailError}}</mat-error>
+            </mat-form-field>
+            
+    
+    
+    
+    <br>
+    <br>
+    
+    
+    <button mat-raised-button type = "submit">Sign Up</button>
+    
+    
+    
+    
+    
+    
+    </form>
+    
+    </mat-card>

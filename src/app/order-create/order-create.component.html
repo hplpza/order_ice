@@ -1,0 +1,55 @@
+
+<mat-card>
+    <p><u><b>Create Your Order Here:</b></u></p>
+<form name = "login" (submit)="onAddOrder(postOrder)" #postOrder="ngForm" novalidate> 
+
+<mat-form-field>
+    <input matInput type="text" ngModel name="enteredUserName" 
+    placeholder="User Name"
+    required
+    minlength="8"
+    #enteredUserName = "ngModel"/>
+    <mat-error *ngIf="enteredUserName.invalid">{{enteredUserNameError}}</mat-error>
+</mat-form-field>
+
+<br>
+<br>
+
+<mat-form-field>
+    <input matInput type="email" 
+    ng-pattern = "^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+    ngModel name="enteredEmail" 
+    name="emailAddress" 
+    placeholder="Email Address"
+    required
+    #enteredEmail = "ngModel"/>
+    <mat-error *ngIf="enteredEmail.invalid">{{enteredEmailError}}</mat-error>
+</mat-form-field>
+
+<br>
+<br>
+
+<mat-form-field>
+    <textarea matInput required  ngModel name="enteredOrder" 
+    name="orderDetails"
+    placeholder="Order"
+    maxlength="50"
+    #enteredOrder = "ngModel"></textarea>
+    <mat-error *ngIf="enteredOrder.invalid">{{enteredOrderError}}</mat-error>
+
+</mat-form-field>
+
+
+
+<br>
+<br>
+
+
+
+<button mat-raised-button type = "submit">Order Now</button>
+</form>
+
+
+</mat-card>
+
+

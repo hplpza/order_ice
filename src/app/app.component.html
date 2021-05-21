@@ -1,0 +1,42 @@
+<main style="background-color: bisque;">
+<body>
+<div style="text-align: center;">
+    <h1><b>[My First Angular App]</b></h1>
+    
+
+             <!---- <app-order-create></app-order-create> -->
+             <!----  <app-order-placed></app-order-placed> -->
+
+
+<nav>
+<button  mat-button color="primary" [routerLink]="['/create']"
+         routerLinkActive="router-link-active">Create Order</button>
+
+         <button  mat-button color="primary" [routerLink]="['/create']"
+         routerLinkActive="router-link-active">Edit Order</button>
+
+         <button  mat-button color="primary" [routerLink]="['/']"
+         routerLinkActive="router-link-active">List Orders</button>
+
+
+         <button  mat-button color="primary" [routerLink]="['/login']"
+         routerLinkActive="router-link-active">Login</button>
+
+         <button  mat-button color="primary" [routerLink]="['/signup']"
+         routerLinkActive="router-link-active">Sign Up</button>
+
+</nav>
+
+<br>
+<br>
+
+<router-outlet></router-outlet>
+
+    </div>
+    <br>
+</body>
+</main>
+
+
+
+

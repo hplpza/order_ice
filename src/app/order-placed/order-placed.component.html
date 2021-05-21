@@ -1,0 +1,48 @@
+
+    <mat-card>
+
+        <mat-accordion multi = "true" *ngIf="orders.length > 0">
+            <mat-expansion-panel *ngFor="let order of orders"  
+            style="background-color: lightgray;">
+            <br>
+
+            <mat-expansion-panel-header 
+            style="margin-bottom: 20px; padding: 10px"
+            aria-placeholder="User Name"
+            >
+                {{order.userName}}
+            </mat-expansion-panel-header>
+            <br>
+                {{order.Email}}
+
+
+
+<mat-action-row>
+    <button mat-button color="primary">Edit</button>
+    <button mat-buttom color="warn" (click)="onDelete(order.id)">Delete</button>
+</mat-action-row>
+
+
+            </mat-expansion-panel>
+        </mat-accordion>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </mat-card>
+
+        <mat-card>
+        <p  *ngIf="orders.length == 0">No orders created yet</p>
+    </mat-card>
